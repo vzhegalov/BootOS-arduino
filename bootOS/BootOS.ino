@@ -42,19 +42,19 @@ void loop() {
           Serial.print("BOOTLINE:");
           Serial.print(bootline);
       }
+      if(incomingChar=='1'){
+        Serial.print("COMMANDS:");
+        Serial.println("1-HELP");
+        Serial.println("2-BOOTLINE-FOR VIEWING LAST BOOT STATUS");}
       Serial.println("PRESS ENTER TO CLEAR COMMAND PROMPT");
     }
 }
 bool buttonIsUp = digitalRead(12);
  if (buttonIsUp==0) {
-    // ...может это «клик», а может и ложный сигнал (дребезг),
-    // возникающий в момент замыкания/размыкания пластин кнопки,
-    // поэтому даём кнопке полностью «успокоиться»...
     delay(10);
     // ...и считываем сигнал снова
     buttonIsUp = digitalRead(12);
-    if (buttonIsUp==0) {  // если она всё ещё нажата...
-      // ...это клик! Переворачиваем сигнал светодиода
+    if (buttonIsUp==0) { 
      Serial.println("REBOOT");
      Serial.println("Network safety STATUS:ON");
      Serial.println("CLEAR OUTPUT");
