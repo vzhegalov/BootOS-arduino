@@ -14,7 +14,6 @@ void whatnumber() {
       data = 1;
     }
     if (data == 1){
-   Serial.print("FUCK YOU DUNY THE CODE IS:");
    Serial.print(message);
    data=0;}
    
